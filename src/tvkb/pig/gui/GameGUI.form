@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="tvkb.pig.gui.GUIGameEventHandler">
+  <grid id="27dc6" binding="main" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="1920" height="1080"/>
+    </constraints>
+    <properties>
+      <minimumSize width="-1" height="-1"/>
+      <preferredSize width="-1" height="-1"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <splitpane id="d2598">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <minimum-size width="300" height="-1"/>
+            <preferred-size width="200" height="200"/>
+          </grid>
+        </constraints>
+        <properties>
+          <dividerLocation value="400"/>
+          <dividerSize value="1"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <splitpane id="10c42">
+            <constraints>
+              <splitpane position="left"/>
+            </constraints>
+            <properties>
+              <dividerLocation value="587"/>
+              <dividerSize value="1"/>
+              <lastDividerLocation value="0"/>
+              <orientation value="0"/>
+              <resizeWeight value="1.0"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="a408c" class="javax.swing.JTable" binding="table">
+                <constraints>
+                  <splitpane position="left"/>
+                </constraints>
+                <properties>
+                  <focusable value="false"/>
+                  <inheritsPopupMenu value="false"/>
+                  <intercellSpacing width="20" height="20"/>
+                  <maximumSize width="-1" height="-1"/>
+                  <minimumSize width="300" height="-1"/>
+                  <opaque value="false"/>
+                  <preferredScrollableViewportSize width="450" height="100"/>
+                  <requestFocusEnabled value="false"/>
+                  <rowHeight value="40"/>
+                </properties>
+              </component>
+              <grid id="90415" layout-manager="GridBagLayout">
+                <constraints>
+                  <splitpane position="right"/>
+                </constraints>
+                <properties>
+                  <alignmentY value="0.5"/>
+                  <autoscrolls value="true"/>
+                  <doubleBuffered value="true"/>
+                  <inheritsPopupMenu value="false"/>
+                  <minimumSize width="300" height="150"/>
+                </properties>
+                <border type="none"/>
+                <children>
+                  <component id="55910" class="javax.swing.JButton" binding="continueButton" default-binding="true">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                      <gridbag weightx="0.0" weighty="0.0"/>
+                    </constraints>
+                    <properties>
+                      <maximumSize width="-1" height="-1"/>
+                      <minimumSize width="300" height="50"/>
+                      <preferredSize width="-1" height="50"/>
+                      <text value="Continue"/>
+                    </properties>
+                  </component>
+                  <component id="3c9c1" class="javax.swing.JButton" binding="saveButton" default-binding="true">
+                    <constraints>
+                      <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                      <gridbag weightx="0.0" weighty="0.0"/>
+                    </constraints>
+                    <properties>
+                      <maximumSize width="-1" height="50"/>
+                      <minimumSize width="300" height="50"/>
+                      <preferredSize width="300" height="50"/>
+                      <text value="Save"/>
+                    </properties>
+                  </component>
+                  <component id="585e8" class="javax.swing.JButton" binding="betButton" default-binding="true">
+                    <constraints>
+                      <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                      <gridbag weightx="0.0" weighty="0.0"/>
+                    </constraints>
+                    <properties>
+                      <maximumSize width="-1" height="-1"/>
+                      <minimumSize width="300" height="50"/>
+                      <preferredSize width="300" height="50"/>
+                      <text value="Bet"/>
+                    </properties>
+                  </component>
+                </children>
+              </grid>
+            </children>
+          </splitpane>
+          <scrollpane id="54f87">
+            <constraints>
+              <splitpane position="right"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="ffd15" class="javax.swing.JTextPane" binding="textPane">
+                <constraints/>
+                <properties>
+                  <background color="-12960960"/>
+                  <editable value="false"/>
+                  <enabled value="true"/>
+                  <focusable value="false"/>
+                  <foreground color="-12960960"/>
+                  <minimumSize width="300" height="300"/>
+                  <opaque value="true"/>
+                </properties>
+              </component>
+            </children>
+          </scrollpane>
+        </children>
+      </splitpane>
+    </children>
+  </grid>
+</form>
