@@ -1,6 +1,5 @@
 package tvkb.pig.gui;
 
-import com.sun.istack.internal.NotNull;
 import tvkb.pig.*;
 
 import javax.swing.*;
@@ -13,7 +12,7 @@ import java.awt.event.ActionListener;
 import java.util.*;
 import java.util.List;
 
-public class GUIGameEventHandler implements GameEventHandler
+public class GUIGameEventHandler extends GameGUI implements GameEventHandler
 {
 
 	/**
@@ -39,36 +38,6 @@ public class GUIGameEventHandler implements GameEventHandler
 	}
 
 	/**
-	 * The main panel of the GUI.
-	 */
-	private JPanel main;
-
-	/**
-	 * The player table in the GUI.
-	 */
-	private JTable table;
-
-	/**
-	 * The text pane in the GUI.
-	 */
-	private JTextPane textPane;
-
-	/**
-	 * The 'Bet' button in the GUI.
-	 */
-	private JButton betButton;
-
-	/**
-	 * The 'Continue' button in the GUI.
-	 */
-	private JButton continueButton;
-
-	/**
-	 * The 'Save' button in the GUI.
-	 */
-	private JButton saveButton;
-
-	/**
 	 * The last ActionListener that was added to the bet button.
 	 */
 	private ActionListener betButtonListener;
@@ -86,17 +55,17 @@ public class GUIGameEventHandler implements GameEventHandler
 	/**
 	 * The players in the game.
 	 */
-	@NotNull private List<Player> players = new ArrayList<>();
+	private List<Player> players = new ArrayList<>();
 
 	/**
 	 * Map of the players and their color.
 	 */
-	@NotNull private Map<Player, Color> colorMap = new HashMap<>();
+	private Map<Player, Color> colorMap = new HashMap<>();
 
 	/**
 	 * Delegates available colors to the new players that join.
 	 */
-	@NotNull private GUIColorDelegator colorDelegator = new GUIColorDelegator();
+	private GUIColorDelegator colorDelegator = new GUIColorDelegator();
 
 	/**
 	 * Creates a new GUI pig game.
@@ -130,7 +99,7 @@ public class GUIGameEventHandler implements GameEventHandler
 	/**
 	 * Adds listeners to the decision buttons.
 	 */
-	private void addDecisionButtonListeners(@NotNull final Game game, @NotNull final Player player)
+	private void addDecisionButtonListeners(final Game game, final Player player)
 	{
 		this.continueButtonListener = e -> respondToDecisionRequest(game, player, GameDecision.CONTINUE);
 		this.saveButtonListener = e -> respondToDecisionRequest(game, player, GameDecision.SAVE);
@@ -182,7 +151,7 @@ public class GUIGameEventHandler implements GameEventHandler
 	 *
 	 * @param output The string output to write.
 	 */
-	private void writeToTextPane(@NotNull String output)
+	private void writeToTextPane(String output)
 	{
 		try {
 			StyledDocument document = textPane.getStyledDocument();
@@ -200,7 +169,7 @@ public class GUIGameEventHandler implements GameEventHandler
 	 * @param output The string output to write.
 	 * @param color  The color to write.
 	 */
-	private void writeToTextPane(@NotNull String output, @NotNull Color color)
+	private void writeToTextPane(String output, Color color)
 	{
 		try {
 			StyledDocument document = textPane.getStyledDocument();

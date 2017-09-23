@@ -1,6 +1,5 @@
 package tvkb.pig.console;
 
-import com.sun.istack.internal.NotNull;
 import tvkb.pig.*;
 
 import java.io.PrintWriter;
@@ -27,27 +26,27 @@ public class ConsoleGameEventHandler implements GameEventHandler
 	/**
 	 * The input of the text game.
 	 */
-	@NotNull private Scanner input;
+	private Scanner input;
 
 	/**
 	 * The output of the text game.
 	 */
-	@NotNull private PrintWriter output;
+	private PrintWriter output;
 
 	/**
 	 * The players currently in the game.
 	 */
-	@NotNull private List<Player> players = new ArrayList<>();
+	private List<Player> players = new ArrayList<>();
 
 	/**
 	 * The colors assigned to the players.
 	 */
-	@NotNull private Map<Player, String> colorMap = new HashMap<>();
+	private Map<Player, String> colorMap = new HashMap<>();
 
 	/**
 	 * Delegates available colors when new players join.
 	 */
-	@NotNull private ConsoleColorDelegator colorDelegator = new ConsoleColorDelegator();
+	private ConsoleColorDelegator colorDelegator = new ConsoleColorDelegator();
 
 	/**
 	 * Creates a new console game event handler.
@@ -55,7 +54,7 @@ public class ConsoleGameEventHandler implements GameEventHandler
 	 * @param input  The input of the console.
 	 * @param output The output to the console.
 	 */
-	public ConsoleGameEventHandler(@NotNull Scanner input, @NotNull PrintWriter output)
+	public ConsoleGameEventHandler(Scanner input, PrintWriter output)
 	{
 		assert input != null;
 		assert output != null;
@@ -201,7 +200,7 @@ public class ConsoleGameEventHandler implements GameEventHandler
 	 *
 	 * @return The chosen decision.
 	 */
-	private GameDecision readGameDecision(@NotNull Player player)
+	private GameDecision readGameDecision(Player player)
 	{
 		while (true) {
 			try {

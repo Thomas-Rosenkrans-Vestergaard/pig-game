@@ -1,19 +1,17 @@
 package tvkb.pig;
 
-import com.sun.istack.internal.NotNull;
-
 public class DicePair implements Dice
 {
 
 	/**
 	 * The first die of the pair.
 	 */
-	@NotNull private Die a = new Die();
+	private Die a = new Die();
 
 	/**
 	 * The second die of the pair.
 	 */
-	@NotNull private Die b = new Die();
+	private Die b = new Die();
 
 	/**
 	 * Rolls the dice.

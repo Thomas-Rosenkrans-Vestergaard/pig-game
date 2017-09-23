@@ -1,7 +1,5 @@
 package tvkb.pig;
 
-import com.sun.istack.internal.NotNull;
-
 public interface GameEventHandler
 {
 
@@ -11,35 +9,35 @@ public interface GameEventHandler
 	 * @param game   The current instance of game.
 	 * @param player The player who joined.
 	 */
-	void onPlayerJoin(@NotNull Game game, @NotNull Player player);
+	void onPlayerJoin(Game game, Player player);
 
 	/**
 	 * Called when a new game starts.
 	 *
 	 * @param game The new game instance.
 	 */
-	void onGameStart(@NotNull Game game);
+	void onGameStart(Game game);
 
 	/**
 	 * Called when the game ends.
 	 *
 	 * @param game The game instance that just ended.
 	 */
-	void onGameEnd(@NotNull Game game);
+	void onGameEnd(Game game);
 
 	/**
 	 * Called when a new round starts.
 	 *
 	 * @param game The current game instance.
 	 */
-	void onRoundStart(@NotNull Game game);
+	void onRoundStart(Game game);
 
 	/**
 	 * Called when a new round ends.
 	 *
 	 * @param game The current game instance.
 	 */
-	void onRoundEnd(@NotNull Game game);
+	void onRoundEnd(Game game);
 
 	/**
 	 * Called when a new turn begins.
@@ -47,7 +45,7 @@ public interface GameEventHandler
 	 * @param game   The current game instance.
 	 * @param player The player whos turn it is.
 	 */
-	void onTurnStart(@NotNull Game game, @NotNull Player player);
+	void onTurnStart(Game game, Player player);
 
 	/**
 	 * Called when a player ends their turn.
@@ -55,7 +53,7 @@ public interface GameEventHandler
 	 * @param game   The current game instance.
 	 * @param player The player whos turn ended.
 	 */
-	void onTurnEnd(@NotNull Game game, @NotNull Player player);
+	void onTurnEnd(Game game, Player player);
 
 	/**
 	 * Called when a player must make a game decision.
@@ -63,7 +61,7 @@ public interface GameEventHandler
 	 * @param game   The current game instance.
 	 * @param player The player to make the decision.
 	 */
-	void onDecision(@NotNull Game game, @NotNull Player player);
+	void onDecision(Game game, Player player);
 
 	/**
 	 * Called when a player continues.
@@ -71,7 +69,7 @@ public interface GameEventHandler
 	 * @param game   The current game instance.
 	 * @param player The player who made the decision.
 	 */
-	void onContinue(@NotNull Game game, @NotNull Player player);
+	void onContinue(Game game, Player player);
 
 	/**
 	 * Called when a player saves.
@@ -79,7 +77,7 @@ public interface GameEventHandler
 	 * @param game   The current game instance.
 	 * @param player The player who made the decision.
 	 */
-	void onSave(@NotNull Game game, @NotNull Player player);
+	void onSave(Game game, Player player);
 
 	/**
 	 * Called when a player bets.
@@ -87,7 +85,7 @@ public interface GameEventHandler
 	 * @param game   The current game instance.
 	 * @param player The player who made the decision.
 	 */
-	void onBet(@NotNull Game game, @NotNull Player player);
+	void onBet(Game game, Player player);
 
 	/**
 	 * Called when a player must reset their turn and bank total.
@@ -95,7 +93,7 @@ public interface GameEventHandler
 	 * @param game   The current game instance.
 	 * @param player The player who must reset their bank.
 	 */
-	void onHardReset(@NotNull Game game, @NotNull Player player);
+	void onHardReset(Game game, Player player);
 
 	/**
 	 * Called when a player must reset their turn total.
@@ -103,12 +101,12 @@ public interface GameEventHandler
 	 * @param game   The current game instance.
 	 * @param player The player who must reset their turn total.
 	 */
-	void onSoftReset(@NotNull Game game, @NotNull Player player);
+	void onSoftReset(Game game, Player player);
 
 	/**
 	 * Called when the game encounters an error.
 	 *
 	 * @param message The message to display.
 	 */
-	void onError(@NotNull String message);
+	void onError(String message);
 }

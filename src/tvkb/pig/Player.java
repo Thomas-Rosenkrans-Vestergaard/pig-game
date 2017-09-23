@@ -1,7 +1,5 @@
 package tvkb.pig;
 
-import com.sun.istack.internal.NotNull;
-
 public abstract class Player
 {
 
@@ -10,12 +8,12 @@ public abstract class Player
 	 *
 	 * @param game The current game instance.
 	 */
-	protected abstract void requestDecision(@NotNull Game game);
+	protected abstract void requestDecision(Game game);
 
 	/**
 	 * The name of the player.
 	 */
-	@NotNull protected String name;
+	protected String name;
 
 	/**
 	 * The turn points the player has.
@@ -42,7 +40,7 @@ public abstract class Player
 	 *
 	 * @param name The name of the player.
 	 */
-	public Player(@NotNull String name)
+	public Player(String name)
 	{
 		assert name != null;
 		this.name = name;
@@ -53,7 +51,7 @@ public abstract class Player
 	 *
 	 * @param dice The dice to roll.
 	 */
-	public void roll(@NotNull Dice dice)
+	public void roll(Dice dice)
 	{
 		dice.roll();
 		lastRoll = dice.sum();

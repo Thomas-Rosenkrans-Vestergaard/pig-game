@@ -124,3 +124,7 @@ modules.xml
 *.ipr
 
 # End of https://www.gitignore.io/api/java,jetbrains,jetbrains+iml
+/pig-game/nbproject/private/
+/nbproject/private/
+/build/
+/dist/

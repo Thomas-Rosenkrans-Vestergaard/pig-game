@@ -1,10 +1,7 @@
 package tvkb.pig;
 
-import com.sun.istack.internal.NotNull;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
 public final class Game
 {
@@ -12,22 +9,22 @@ public final class Game
 	/**
 	 * Handler to send game events to.
 	 */
-	@NotNull private GameEventHandler eventHandler;
+	private GameEventHandler eventHandler;
 
 	/**
 	 * The dice to play the game with.
 	 */
-	@NotNull private Dice dice;
+	private Dice dice;
 
 	/**
 	 * The players in the game.
 	 */
-	@NotNull private List<Player> players = new ArrayList<>();
+	private List<Player> players = new ArrayList<>();
 
 	/**
 	 * The player currently waiting to respond.
 	 */
-	@NotNull private Player currentRespondent;
+	private Player currentRespondent;
 
 	/**
 	 * Creates a new game.
@@ -35,7 +32,7 @@ public final class Game
 	 * @param eventHandler The object to send game events to.
 	 * @param dice         The dice to play the game with.
 	 */
-	public Game(@NotNull GameEventHandler eventHandler, @NotNull Dice dice)
+	public Game(GameEventHandler eventHandler, Dice dice)
 	{
 		assert eventHandler != null;
 		assert dice != null;
@@ -142,7 +139,7 @@ public final class Game
 	/**
 	 * Plays the next player in the list.
 	 */
-	private void playNext(@NotNull Player player)
+	private void playNext(Player player)
 	{
 		eventHandler.onTurnEnd(this, player);
 		int index = players.indexOf(player);

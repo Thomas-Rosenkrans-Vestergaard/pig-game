@@ -1,7 +1,5 @@
 package tvkb.pig;
 
-import com.sun.istack.internal.NotNull;
-
 public class HumanPlayer extends Player
 {
 
@@ -10,7 +8,7 @@ public class HumanPlayer extends Player
 	 *
 	 * @param name The name of the human player.
 	 */
-	public HumanPlayer(@NotNull String name)
+	public HumanPlayer(String name)
 	{
 		super(name);
 	}
