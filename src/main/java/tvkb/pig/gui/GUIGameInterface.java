@@ -28,8 +28,8 @@ public class GUIGameInterface extends GameGUI implements GameEventHandler
 		ConsoleGameInterface consoleGameInterface = new ConsoleGameInterface(new Scanner(System.in), new PrintWriter(System.out, true));
 
 		List<Player> players = new ArrayList<>();
-		players.add(new ComputerPlayer("Computer 1"));
-		players.add(new ComputerPlayer("Computer 2"));
+		players.add(new HumanPlayer("Human"));
+		players.add(new ComputerPlayer("Computer"));
 
 		List<GameEventHandler> eventHandlers = new ArrayList<>();
 		eventHandlers.add(guiGameInterface);

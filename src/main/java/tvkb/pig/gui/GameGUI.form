@@ -30,7 +30,7 @@
             </constraints>
             <properties>
               <continuousLayout value="false"/>
-              <dividerLocation value="300"/>
+              <dividerLocation value="775"/>
               <dividerSize value="1"/>
               <lastDividerLocation value="200"/>
               <orientation value="0"/>
@@ -39,16 +39,32 @@
             </properties>
             <border type="none"/>
             <children>
-              <grid id="90415" layout-manager="GridBagLayout">
+              <component id="a408c" class="javax.swing.JTable" binding="table">
                 <constraints>
                   <splitpane position="left"/>
+                </constraints>
+                <properties>
+                  <focusable value="false"/>
+                  <inheritsPopupMenu value="false"/>
+                  <intercellSpacing width="20" height="20"/>
+                  <maximumSize width="-1" height="-1"/>
+                  <minimumSize width="300" height="-1"/>
+                  <opaque value="false"/>
+                  <preferredScrollableViewportSize width="450" height="100"/>
+                  <requestFocusEnabled value="false"/>
+                  <rowHeight value="40"/>
+                </properties>
+              </component>
+              <grid id="90415" layout-manager="GridBagLayout">
+                <constraints>
+                  <splitpane position="right"/>
                 </constraints>
                 <properties>
                   <alignmentY value="0.5"/>
                   <autoscrolls value="true"/>
                   <doubleBuffered value="true"/>
                   <inheritsPopupMenu value="false"/>
-                  <minimumSize width="300" height="200"/>
+                  <minimumSize width="300" height="300"/>
                   <preferredSize width="300" height="300"/>
                 </properties>
                 <border type="none"/>
@@ -120,22 +136,6 @@
                   </component>
                 </children>
               </grid>
-              <component id="a408c" class="javax.swing.JTable" binding="table">
-                <constraints>
-                  <splitpane position="right"/>
-                </constraints>
-                <properties>
-                  <focusable value="false"/>
-                  <inheritsPopupMenu value="false"/>
-                  <intercellSpacing width="20" height="20"/>
-                  <maximumSize width="-1" height="-1"/>
-                  <minimumSize width="300" height="-1"/>
-                  <opaque value="false"/>
-                  <preferredScrollableViewportSize width="450" height="100"/>
-                  <requestFocusEnabled value="false"/>
-                  <rowHeight value="40"/>
-                </properties>
-              </component>
             </children>
           </splitpane>
           <scrollpane id="54f87">

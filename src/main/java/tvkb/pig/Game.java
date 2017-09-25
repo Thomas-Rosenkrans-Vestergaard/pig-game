@@ -97,7 +97,6 @@ public final class Game
 	 */
 	private void handleTurn(Player player)
 	{
-		sendEvent(handler -> handler.onTurnStart(this, player));
 		this.currentRespondent = player;
 
 		player.roll(dice);
@@ -116,6 +115,7 @@ public final class Game
 			return;
 		}
 
+		sendEvent(handler -> handler.onTurnStart(this, player));
 		player.resolveBet(dice);
 		player.addTurnPoints(dice);
 		player.requestDecision(this);
@@ -149,7 +149,6 @@ public final class Game
 	 *
 	 * @param player The player who made the decision.
 	 * @param bet    The amount of points the player wants to bet.
-	 *
 	 * @throws NotEnoughPointsException If the player doesn't have enough points to bet.
 	 * @throws InvalidArgumentException If the provided amount is negative.
 	 */
