@@ -29,40 +29,27 @@
               <splitpane position="left"/>
             </constraints>
             <properties>
-              <dividerLocation value="587"/>
+              <continuousLayout value="false"/>
+              <dividerLocation value="300"/>
               <dividerSize value="1"/>
-              <lastDividerLocation value="0"/>
+              <lastDividerLocation value="200"/>
               <orientation value="0"/>
+              <preferredSize width="-1" height="-1"/>
               <resizeWeight value="1.0"/>
             </properties>
             <border type="none"/>
             <children>
-              <component id="a408c" class="javax.swing.JTable" binding="table">
-                <constraints>
-                  <splitpane position="left"/>
-                </constraints>
-                <properties>
-                  <focusable value="false"/>
-                  <inheritsPopupMenu value="false"/>
-                  <intercellSpacing width="20" height="20"/>
-                  <maximumSize width="-1" height="-1"/>
-                  <minimumSize width="300" height="-1"/>
-                  <opaque value="false"/>
-                  <preferredScrollableViewportSize width="450" height="100"/>
-                  <requestFocusEnabled value="false"/>
-                  <rowHeight value="40"/>
-                </properties>
-              </component>
               <grid id="90415" layout-manager="GridBagLayout">
                 <constraints>
-                  <splitpane position="right"/>
+                  <splitpane position="left"/>
                 </constraints>
                 <properties>
                   <alignmentY value="0.5"/>
                   <autoscrolls value="true"/>
                   <doubleBuffered value="true"/>
                   <inheritsPopupMenu value="false"/>
-                  <minimumSize width="300" height="150"/>
+                  <minimumSize width="300" height="200"/>
+                  <preferredSize width="300" height="300"/>
                 </properties>
                 <border type="none"/>
                 <children>
@@ -72,10 +59,13 @@
                       <gridbag weightx="0.0" weighty="0.0"/>
                     </constraints>
                     <properties>
-                      <maximumSize width="-1" height="-1"/>
+                      <enabled value="true"/>
+                      <horizontalAlignment value="0"/>
+                      <maximumSize width="-1" height="50"/>
                       <minimumSize width="300" height="50"/>
-                      <preferredSize width="-1" height="50"/>
+                      <preferredSize width="300" height="50"/>
                       <text value="Continue"/>
+                      <verticalAlignment value="0"/>
                     </properties>
                   </component>
                   <component id="3c9c1" class="javax.swing.JButton" binding="saveButton" default-binding="true">
@@ -88,6 +78,8 @@
                       <minimumSize width="300" height="50"/>
                       <preferredSize width="300" height="50"/>
                       <text value="Save"/>
+                      <verticalAlignment value="0"/>
+                      <verticalTextPosition value="0"/>
                     </properties>
                   </component>
                   <component id="585e8" class="javax.swing.JButton" binding="betButton" default-binding="true">
@@ -102,8 +94,48 @@
                       <text value="Bet"/>
                     </properties>
                   </component>
+                  <component id="ca486" class="javax.swing.JSlider" binding="betSlider">
+                    <constraints>
+                      <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                      <gridbag weightx="0.0" weighty="0.0"/>
+                    </constraints>
+                    <properties>
+                      <maximum value="200"/>
+                      <minimum value="0"/>
+                      <minorTickSpacing value="1"/>
+                      <preferredSize width="300" height="50"/>
+                      <snapToTicks value="true"/>
+                      <value value="0"/>
+                      <valueIsAdjusting value="false"/>
+                    </properties>
+                  </component>
+                  <component id="868f6" class="javax.swing.JLabel" binding="betLabel">
+                    <constraints>
+                      <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                      <gridbag weightx="0.0" weighty="0.0"/>
+                    </constraints>
+                    <properties>
+                      <text value="10"/>
+                    </properties>
+                  </component>
                 </children>
               </grid>
+              <component id="a408c" class="javax.swing.JTable" binding="table">
+                <constraints>
+                  <splitpane position="right"/>
+                </constraints>
+                <properties>
+                  <focusable value="false"/>
+                  <inheritsPopupMenu value="false"/>
+                  <intercellSpacing width="20" height="20"/>
+                  <maximumSize width="-1" height="-1"/>
+                  <minimumSize width="300" height="-1"/>
+                  <opaque value="false"/>
+                  <preferredScrollableViewportSize width="450" height="100"/>
+                  <requestFocusEnabled value="false"/>
+                  <rowHeight value="40"/>
+                </properties>
+              </component>
             </children>
           </splitpane>
           <scrollpane id="54f87">

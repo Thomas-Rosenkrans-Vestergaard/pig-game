@@ -4,14 +4,6 @@ public interface GameEventHandler
 {
 
 	/**
-	 * Called when a new player joins.
-	 *
-	 * @param game   The current instance of game.
-	 * @param player The player who joined.
-	 */
-	void onPlayerJoin(Game game, Player player);
-
-	/**
 	 * Called when a new game starts.
 	 *
 	 * @param game The new game instance.
@@ -43,7 +35,7 @@ public interface GameEventHandler
 	 * Called when a new turn begins.
 	 *
 	 * @param game   The current game instance.
-	 * @param player The player whos turn it is.
+	 * @param player The player whose turn it is.
 	 */
 	void onTurnStart(Game game, Player player);
 
@@ -51,7 +43,7 @@ public interface GameEventHandler
 	 * Called when a player ends their turn.
 	 *
 	 * @param game   The current game instance.
-	 * @param player The player whos turn ended.
+	 * @param player The player whose turn ended.
 	 */
 	void onTurnEnd(Game game, Player player);
 
@@ -61,31 +53,16 @@ public interface GameEventHandler
 	 * @param game   The current game instance.
 	 * @param player The player to make the decision.
 	 */
-	void onDecision(Game game, Player player);
+	void onDecisionRequest(Game game, Player player);
 
 	/**
-	 * Called when a player continues.
+	 * Called when the game has received a decision.
 	 *
-	 * @param game   The current game instance.
-	 * @param player The player who made the decision.
+	 * @param game     The current game instance.
+	 * @param player   The player whose decision was received.
+	 * @param decision The decision that was made by the player.
 	 */
-	void onContinue(Game game, Player player);
-
-	/**
-	 * Called when a player saves.
-	 *
-	 * @param game   The current game instance.
-	 * @param player The player who made the decision.
-	 */
-	void onSave(Game game, Player player);
-
-	/**
-	 * Called when a player bets.
-	 *
-	 * @param game   The current game instance.
-	 * @param player The player who made the decision.
-	 */
-	void onBet(Game game, Player player);
+	void onDecisionResponse(Game game, Player player, GameDecision decision);
 
 	/**
 	 * Called when a player must reset their turn and bank total.

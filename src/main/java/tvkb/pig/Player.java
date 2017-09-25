@@ -1,10 +1,13 @@
 package tvkb.pig;
 
+import com.sun.javaws.exceptions.InvalidArgumentException;
+import org.jetbrains.annotations.NotNull;
+
 public abstract class Player
 {
 
 	/**
-	 * Prompts the player to make a game decision.
+	 * Requests the player to make a game decision using the game.respondDecision();
 	 *
 	 * @param game The current game instance.
 	 */
@@ -13,7 +16,7 @@ public abstract class Player
 	/**
 	 * The name of the player.
 	 */
-	protected String name;
+	@NotNull protected String name;
 
 	/**
 	 * The turn points the player has.
@@ -26,9 +29,9 @@ public abstract class Player
 	protected int bankPoints = 0;
 
 	/**
-	 * The current amount of points bet.
+	 * The current amount of in the betting pot.
 	 */
-	protected int betPoints = 0;
+	protected int currentBet = 0;
 
 	/**
 	 * The players last roll.
@@ -40,9 +43,8 @@ public abstract class Player
 	 *
 	 * @param name The name of the player.
 	 */
-	public Player(String name)
+	public Player(@NotNull String name)
 	{
-		assert name != null;
 		this.name = name;
 	}
 
@@ -51,10 +53,50 @@ public abstract class Player
 	 *
 	 * @param dice The dice to roll.
 	 */
-	public void roll(Dice dice)
+	public int roll(Dice dice)
 	{
 		dice.roll();
-		lastRoll = dice.sum();
+		this.lastRoll = dice.sum();
+
+		return this.lastRoll;
+	}
+
+	/**
+	 * Bets the provided amount of points.
+	 *
+	 * @param amount The amount of points to bet.
+	 *
+	 * @throws NotEnoughPointsException If the player doesn't have enough points to bet.
+	 * @throws InvalidArgumentException If the provided amount is negative.
+	 */
+	public void bet(final int amount) throws NotEnoughPointsException, IllegalArgumentException
+	{
+		if (amount < 0) {
+			throw new IllegalArgumentException("Bet amount cannot be less than one.");
+		}
+
+		if (this.currentBet + amount > bankPoints) {
+			throw new NotEnoughPointsException("Not enough points to bet", bankPoints, this.currentBet + amount);
+		}
+
+		this.currentBet += amount;
+		this.bankPoints -= amount;
+	}
+
+	/**
+	 * Resolves the bets of the player.
+	 *
+	 * @param dice The thrown dice.
+	 */
+	public void resolveBet(Dice dice)
+	{
+		if (dice.winsBet()) {
+			this.bankPoints += this.currentBet * 2;
+			this.currentBet = 0;
+			return;
+		}
+
+		this.currentBet = 0;
 	}
 
 	/**
@@ -65,34 +107,6 @@ public abstract class Player
 	public String getName()
 	{
 		return this.name;
-	}
-
-	/**
-	 * Handles the player winning their bet.
-	 */
-	public void onBetWin()
-	{
-		bankPoints += betPoints;
-		betPoints = 0;
-	}
-
-	/**
-	 * Handles the player losing their bet.
-	 */
-	public void onBetLoss()
-	{
-		bankPoints -= betPoints;
-		betPoints = 0;
-	}
-
-	/**
-	 * Bets the provided amount of points.
-	 *
-	 * @param bet The bet to make.
-	 */
-	public void bet(int bet)
-	{
-		betPoints += bet;
 	}
 
 	/**
@@ -130,9 +144,9 @@ public abstract class Player
 	 *
 	 * @return The current bet.
 	 */
-	public int getBetPoints()
+	public int getCurrentBet()
 	{
-		return this.betPoints;
+		return this.currentBet;
 	}
 
 	/**
@@ -148,28 +162,28 @@ public abstract class Player
 	 */
 	public void resetPointsHard()
 	{
-		this.bankPoints = 0;
+		if (this.bankPoints > 0)
+			this.bankPoints = 0;
 		this.turnPoints = 0;
 	}
 
 	/**
 	 * Adds the provided amount of points to the players turn total.
 	 *
-	 * @param add The amount of points to add to the players turn total.
+	 * @param dice The dice to add to the turn total.
 	 */
-	public void addTurnPoints(int add)
+	public void addTurnPoints(Dice dice)
 	{
-		this.turnPoints += add;
+		this.turnPoints += dice.sum();
 	}
 
 	/**
-	 * Adds the provided amount of points to the players bank total.
-	 *
-	 * @param add The amount of points to add to the players bank total.
+	 * Saves the turn points.
 	 */
-	public void addBankPoints(int add)
+	public void saveTurnPoints()
 	{
-		this.bankPoints += add;
+		this.bankPoints += this.turnPoints;
+		this.turnPoints = 0;
 	}
 
 	/**

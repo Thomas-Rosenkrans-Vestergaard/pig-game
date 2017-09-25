@@ -15,7 +15,7 @@ public class GUIColorDelegator
 	 *
 	 * @return The next available color.
 	 */
-	public Color next()
+	public Color getNextColor()
 	{
 		currentColor++;
 

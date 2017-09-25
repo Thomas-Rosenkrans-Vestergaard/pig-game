@@ -14,12 +14,12 @@ public class HumanPlayer extends Player
 	}
 
 	/**
-	 * Delegates the next game decision to the player.
+	 * Delegates the getNextColor game decision to the player.
 	 *
 	 * @param game The current game.
 	 */
 	@Override public void requestDecision(Game game)
 	{
-		game.getEventHandler().onDecision(game, this);
+		game.delegateEvent(handler -> handler.onDecisionRequest(game, this));
 	}
 }

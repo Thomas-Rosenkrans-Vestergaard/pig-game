@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/pig-game.iml" filepath="$PROJECT_DIR$/pig-game.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pig-game_main.iml" filepath="$PROJECT_DIR$/.idea/modules/pig-game_main.iml" group="pig-game" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pig-game_test.iml" filepath="$PROJECT_DIR$/.idea/modules/pig-game_test.iml" group="pig-game" />
+    </modules>
+  </component>
+</project>
