@@ -1,14 +1,11 @@
 package tvkb.pig.gui;
 
 import tvkb.pig.*;
-import tvkb.pig.console.ConsoleGameEventHandler;
+import tvkb.pig.console.ConsoleGameInterface;
 
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.text.SimpleAttributeSet;
-import javax.swing.text.Style;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
 import java.awt.*;
@@ -17,7 +14,7 @@ import java.io.PrintWriter;
 import java.util.*;
 import java.util.List;
 
-public class GUIGameEventHandler extends GameGUI implements GameEventHandler
+public class GUIGameInterface extends GameGUI implements GameEventHandler
 {
 
 	/**
@@ -27,16 +24,16 @@ public class GUIGameEventHandler extends GameGUI implements GameEventHandler
 	 */
 	public static void main(String[] args) throws GameStartException
 	{
-		GUIGameEventHandler     guiGameEventHandler     = new GUIGameEventHandler();
-		ConsoleGameEventHandler consoleGameEventHandler = new ConsoleGameEventHandler(new Scanner(System.in), new PrintWriter(System.out, true));
+		GUIGameInterface     guiGameInterface     = new GUIGameInterface();
+		ConsoleGameInterface consoleGameInterface = new ConsoleGameInterface(new Scanner(System.in), new PrintWriter(System.out, true));
 
 		List<Player> players = new ArrayList<>();
 		players.add(new ComputerPlayer("Computer 1"));
 		players.add(new ComputerPlayer("Computer 2"));
 
 		List<GameEventHandler> eventHandlers = new ArrayList<>();
-		eventHandlers.add(guiGameEventHandler);
-		eventHandlers.add(consoleGameEventHandler);
+		eventHandlers.add(guiGameInterface);
+		eventHandlers.add(consoleGameInterface);
 
 		Game game = new Game(new DicePair(), eventHandlers, players);
 		game.start();
@@ -75,7 +72,7 @@ public class GUIGameEventHandler extends GameGUI implements GameEventHandler
 	/**
 	 * Creates a new GUI pig game.
 	 */
-	public GUIGameEventHandler()
+	public GUIGameInterface()
 	{
 		JFrame frame = new JFrame("Pig Game");
 		frame.setContentPane(this.main);

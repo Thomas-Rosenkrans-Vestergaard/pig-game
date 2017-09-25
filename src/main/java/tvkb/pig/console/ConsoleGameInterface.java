@@ -8,7 +8,7 @@ import java.io.PrintWriter;
 import java.util.*;
 import java.util.List;
 
-public class ConsoleGameEventHandler implements GameEventHandler
+public class ConsoleGameInterface implements GameEventHandler
 {
 
 	/**
@@ -18,12 +18,12 @@ public class ConsoleGameEventHandler implements GameEventHandler
 	 */
 	public static void main(String[] args) throws GameStartException
 	{
-		ConsoleGameEventHandler consoleGameEventHandler = new ConsoleGameEventHandler(new Scanner(System.in), new PrintWriter(System.out, true));
+		ConsoleGameInterface consoleGameInterface = new ConsoleGameInterface(new Scanner(System.in), new PrintWriter(System.out, true));
 
 		List<Player> players = new ArrayList<>();
 		players.add(new HumanPlayer("Thomas"));
 		players.add(new ComputerPlayer("Computer"));
-		Game game = new Game(new DicePair(), consoleGameEventHandler, players);
+		Game game = new Game(new DicePair(), consoleGameInterface, players);
 		game.start();
 		System.out.println("End");
 	}
@@ -64,7 +64,7 @@ public class ConsoleGameEventHandler implements GameEventHandler
 	 * @param input  The input of the console.
 	 * @param output The output to the console.
 	 */
-	public ConsoleGameEventHandler(@NotNull Scanner input, @NotNull PrintWriter output)
+	public ConsoleGameInterface(@NotNull Scanner input, @NotNull PrintWriter output)
 	{
 		this.input = input;
 		this.output = output;
