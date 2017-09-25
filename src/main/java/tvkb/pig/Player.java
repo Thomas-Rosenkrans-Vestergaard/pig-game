@@ -1,6 +1,5 @@
 package tvkb.pig;
 
-import com.sun.javaws.exceptions.InvalidArgumentException;
 import org.jetbrains.annotations.NotNull;
 
 public abstract class Player
@@ -65,9 +64,8 @@ public abstract class Player
 	 * Bets the provided amount of points.
 	 *
 	 * @param amount The amount of points to bet.
-	 *
 	 * @throws NotEnoughPointsException If the player doesn't have enough points to bet.
-	 * @throws InvalidArgumentException If the provided amount is negative.
+	 * @throws IllegalArgumentException If the provided amount is negative.
 	 */
 	public void bet(final int amount) throws NotEnoughPointsException, IllegalArgumentException
 	{

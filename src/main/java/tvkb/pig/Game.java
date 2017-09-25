@@ -1,6 +1,5 @@
 package tvkb.pig;
 
-import com.sun.javaws.exceptions.InvalidArgumentException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -150,7 +149,7 @@ public final class Game
 	 * @param player The player who made the decision.
 	 * @param bet    The amount of points the player wants to bet.
 	 * @throws NotEnoughPointsException If the player doesn't have enough points to bet.
-	 * @throws InvalidArgumentException If the provided amount is negative.
+	 * @throws IllegalArgumentException If the provided amount is negative.
 	 */
 	public void respondBet(Player player, int bet) throws NotEnoughPointsException, IllegalArgumentException
 	{
@@ -196,7 +195,6 @@ public final class Game
 	{
 		eventHandlers.forEach(handler -> consumer.accept(handler));
 	}
-
 
 	/**
 	 * Delegates the provided consumer to the event handlers in the game.

@@ -24,8 +24,11 @@ public class GUIGameInterface extends GameGUI implements GameEventHandler
 	 */
 	public static void main(String[] args) throws GameStartException
 	{
-		GUIGameInterface     guiGameInterface     = new GUIGameInterface();
-		ConsoleGameInterface consoleGameInterface = new ConsoleGameInterface(new Scanner(System.in), new PrintWriter(System.out, true));
+		GUIGameInterface guiGameInterface = new GUIGameInterface();
+		ConsoleGameInterface consoleGameInterface = new ConsoleGameInterface(
+				new Scanner(System.in),
+				new PrintWriter(System.out, true)
+		);
 
 		List<Player> players = new ArrayList<>();
 		players.add(new HumanPlayer("Human"));

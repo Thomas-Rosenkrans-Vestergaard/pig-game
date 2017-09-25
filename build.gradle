@@ -1,5 +1,15 @@
 apply plugin: 'java'
 apply plugin: 'idea'
+apply plugin: 'com.github.johnrengelman.shadow'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.1'
+    }
+}
 
 repositories {
     mavenCentral()
@@ -9,4 +19,12 @@ repositories {
 dependencies {
     compile group: 'com.intellij', name: 'forms_rt', version: '7.0.3'
     compile group: 'org.jetbrains', name: 'annotations', version: '15.0'
+}
+
+shadowJar {
+    manifest {
+        attributes(
+                'Main-Class': 'tvkb.pig.gui.GUIGameInterface'
+        )
+    }
 }
