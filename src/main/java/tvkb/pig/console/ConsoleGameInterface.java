@@ -25,7 +25,6 @@ public class ConsoleGameInterface implements GameEventHandler
 		players.add(new ComputerPlayer("Computer"));
 		Game game = new Game(new DicePair(), consoleGameInterface, players);
 		game.start();
-		System.out.println("End");
 	}
 
 	/**
