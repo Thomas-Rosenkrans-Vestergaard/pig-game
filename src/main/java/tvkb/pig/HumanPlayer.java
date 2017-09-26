@@ -14,7 +14,7 @@ public class HumanPlayer extends Player
 	}
 
 	/**
-	 * Delegates the getNextColor game decision to the player.
+	 * Delegates the next game decision to the player.
 	 *
 	 * @param game The current game.
 	 */

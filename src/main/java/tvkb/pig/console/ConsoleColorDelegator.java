@@ -9,9 +9,9 @@ public class ConsoleColorDelegator
 	private int currentColor = 0;
 
 	/**
-	 * Returns the getNextColor available color.
+	 * Returns the next available color.
 	 *
-	 * @return The getNextColor available color.
+	 * @return The next available color.
 	 */
 	public String getNextColor()
 	{

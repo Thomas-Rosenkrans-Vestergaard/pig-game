@@ -159,7 +159,7 @@ public final class Game
 	}
 
 	/**
-	 * Plays the getNextColor player in the list.
+	 * Plays the next player in the list.
 	 */
 	private void playNext()
 	{
